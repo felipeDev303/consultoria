@@ -1,3 +1,4 @@
+/* Reset CSS básico para evitar inconsistencias entre navegadores */
 *,
 *::before *::after {
   box-sizing: border-box; /*Padding y border se incluyen en el tamaño del width/height*/
@@ -5,48 +6,50 @@
   padding: 0;
 }
 
+/* Estilos base para el HTML y Body */
 html {
-  font-size: 100%;
-  scroll-behavior: smooth; /*Desplazamiento suave*/
+  font-size: 100%; /* Base para unidades rem (normalmente 16px) */
+  scroll-behavior: smooth; /* Opcional: scroll suave para anclas */
 }
 
 body {
-  font-family: "Arial", sans-serif; /*Tipografía de la página*/
-  font-size: 1.6rem; /*Tamaño de la fuente*/
-  color: #333; /*Color del texto*/
-  background-color: #f4f4f4; /*Color de fondo*/
-  -webkit-font-smoothing: antialiased; /*Suavizado de fuentes en Webkit*/
-  -moz-osx-font-smoothing: grayscale; /*Suavizado de fuentes en Firefox*/
+  font-family: "Poppins", sans-serif; /* ¡Elige tu fuente principal! */
+  line-height: 1.6; /* Espaciado entre líneas para legibilidad */
+  color: #111111; /* Color de texto por defecto */
+  background-color: #fff; /* Color de fondo por defecto */
+  -webkit-font-smoothing: antialiased; /* Mejora renderizado de fuentes en WebKit */
+  -moz-osx-font-smoothing: grayscale; /* Mejora renderizado de fuentes en Firefox */
 }
 
 img {
-  max-width: 100%; /*Las imágenes no exceden el ancho del contenedor*/
-  height: auto; /*Altura automática para mantener la proporción*/
-  display: block; /*Las imágenes se comportan como bloques*/
+  max-width: 100%; /* Hace las imágenes responsivas por defecto */
+  height: auto; /* Mantiene la proporción */
+  display: block; /* Evita espacio extra debajo de las imágenes */
 }
 
 a {
-  text-decoration: none; /*Sin subrayado en los enlaces*/
-  color: #333; /*Color de los enlaces*/
-  transition: all 0.3s ease; /*Transición suave para los enlaces*/
+  color: #007bff; /* Color de enlace base */
+  text-decoration: none; /* Quita subrayado por defecto (puedes añadirlo al hover) */
 }
 
 a:hover,
 a:focus {
-  outline: 2px solid blue; /*Contorno al pasar el ratón o al recibir foco*/
-  text-decoration: underline; /*Subrayado en los enlaces al pasar el ratón o al recibir foco*/
-  outline-offset: 2px; /*Desplazamiento del contorno*/
+  text-decoration: underline; /* Añade feedback visual */
+  /* ¡Asegúrate de que :focus tenga un estilo claro visible! */
+  outline: 2px solid blue; /* Ejemplo de outline para focus */
+  outline-offset: 2px;
 }
 
+/* Añade estilos base para listas si es necesario (ej. quitar viñetas a navs) */
 ul {
-  list-style: none; /*Sin viñetas en las listas*/
+  list-style: none; /* Quita viñetas por defecto (ajusta según necesites) */
 }
 
 .container {
-  max-width: 900px; /*Ancho máximo para pantallas pequeñas*/
-  max-width: 1140px; /*Ancho máximo para pantallas grandes*/
-  margin-left: auto; /*Centrar el contenedor*/
-  margin-right: auto; /*Centrar el contenedor*/
+  width: 90%; /* Ancho en pantallas pequeñas */
+  max-width: 1140px; /* Ancho máximo para pantallas grandes */
+  margin-left: auto;
+  margin-right: auto; /* Centra el contenedor */
 }
 
 /* Estilos base para Header (Mobile) */
@@ -61,7 +64,7 @@ ul {
   /* O .logo img si usas imagen */
   font-weight: bold;
   font-size: 1.5rem;
-  color: #333; /* Color del logo */
+  color: #d41929; /* Color del logo */
 }
 
 /* Estilos base para Nav (Mobile - podría estar oculto inicialmente) */
@@ -79,6 +82,10 @@ ul {
   padding: 2rem 0;
   margin-top: 4rem; /* Espacio sobre el footer */
   text-align: center;
+}
+
+.site-footer .footer-content {
+  /* Puedes usar Flexbox aquí también si necesitas alinear elementos */
 }
 
 .social-media {
@@ -176,7 +183,7 @@ h2 {
 .cta-button {
   display: inline-block; /* Para que acepte padding */
   padding: 0.8rem 1.5rem;
-  background-color: #007bff;
+  background-color: #d41929;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -230,6 +237,11 @@ h2 {
 
 /* Estilos para Tablets y Escritorios Pequeños (ej. >= 768px) */
 @media (min-width: 768px) {
+  html {
+    /* Podrías aumentar ligeramente el tamaño de fuente base si quieres */
+    /* font-size: 105%; */
+  }
+
   .hero-section h1 {
     font-size: 2.8rem; /* Texto más grande en pantallas grandes */
   }
@@ -269,9 +281,15 @@ h2 {
   .services-grid {
     grid-template-columns: repeat(3, 1fr); /* 3 columnas */
   }
+  .cta-item {
+    /* Ajustar si es necesario para 3 columnas */
+  }
 }
 
 /* Estilos para Escritorios Muy Grandes (ej. >= 1200px) */
 @media (min-width: 1200px) {
   /* Ajustes adicionales si son necesarios */
+  .container {
+    /* Ya tiene max-width, pero podrías ajustar algo más */
+  }
 }
