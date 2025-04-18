@@ -30,8 +30,6 @@ img {
   max-width: 100%; /* Hace las imágenes responsivas por defecto */
   height: auto; /* Mantiene la proporción */
   display: block; /* Evita espacio extra debajo de las imágenes */
-  color: #111111; /* Color de texto por defecto */
-  text-decoration: none; /* Quita subrayado por defecto (puedes añadirlo al hover) */
 }
 
 a {
@@ -118,7 +116,7 @@ ul {
 
 .decorative-arrow {
   width: 40px; /* Tamaño de la flecha */
-  margin: 20rem auto 0; /* Espaciado y centrado */
+  margin: 3rem auto 0; /* Espaciado y centrado */
 }
 
 /* Sections General */
@@ -159,13 +157,11 @@ h2 {
   transform: translateY(-2px); /* Efecto de elevación */
 }
 
-.service-item img {
+.service-item svg {
   margin: 0 auto 1rem;
   display: block; /* Centrado */
   width: 30px; /* Ancho fijo para iconos */
   height: auto; /* Mantiene proporción */
-  filter: invert(31%) sepia(65%) saturate(1994%) hue-rotate(344deg)
-    brightness(89%) contrast(79%);
 }
 
 .service-item h3,
