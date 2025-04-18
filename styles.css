@@ -41,7 +41,7 @@ a {
 
 a:hover,
 a:focus {
-  color: #d41929; /* Color de enlace al pasar el ratón o al enfocar */
+  color: #cc3c34; /* Color de enlace al pasar el ratón o al enfocar */
   text-decoration: underline; /* Añade subrayado al hover/focus */
 }
 
@@ -69,7 +69,7 @@ ul {
   /* O .logo img si usas imagen */
   font-weight: bold; /* Negrita para el logo */
   font-size: 1.3rem;
-  color: #d41929; /* Color del logo */
+  color: #cc3c34; /* Color del logo */
   text-transform: uppercase; /* Opcional: transforma a mayúsculas */
   letter-spacing: 1px; /* Espaciado entre letras */
   text-decoration: none; /* Quita subrayado */
@@ -162,8 +162,10 @@ h2 {
 .service-item img {
   margin: 0 auto 1rem;
   display: block; /* Centrado */
-  width: 40px; /* Ancho fijo para iconos */
+  width: 30px; /* Ancho fijo para iconos */
   height: auto; /* Mantiene proporción */
+  filter: invert(31%) sepia(65%) saturate(1994%) hue-rotate(344deg)
+    brightness(89%) contrast(79%);
 }
 
 .service-item h3,
@@ -200,7 +202,7 @@ h2 {
 .cta-button {
   display: inline-block; /* Para que acepte padding */
   padding: 0.8rem 1.5rem;
-  background-color: #d41929;
+  background-color: #cc3c34;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -214,9 +216,8 @@ h2 {
 .cta-button:hover,
 .button:focus,
 .cta-button:focus {
-  background-color: #0056b3;
   text-decoration: none; /* Evita doble subrayado */
-  outline: 2px solid blue; /* Asegura visibilidad del focus */
+  outline: 2px solid #cc3c34; /* Asegura visibilidad del focus */
   outline-offset: 2px;
 }
 
