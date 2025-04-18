@@ -19,25 +19,30 @@ body {
   background-color: #fff; /* Color de fondo por defecto */
   -webkit-font-smoothing: antialiased; /* Mejora renderizado de fuentes en WebKit */
   -moz-osx-font-smoothing: grayscale; /* Mejora renderizado de fuentes en Firefox */
+  font-size: 1rem; /* Tamaño de fuente base (16px) */
+  overflow-x: hidden; /* Evita scroll horizontal no deseado */
+  scroll-padding-top: 5rem; /* Espacio superior para anclas (ajusta según tu header) */
+  /* Puedes añadir un color de fondo diferente para el body si lo deseas */
+  /* background-color: #f8f9fa; */
 }
 
 img {
   max-width: 100%; /* Hace las imágenes responsivas por defecto */
   height: auto; /* Mantiene la proporción */
   display: block; /* Evita espacio extra debajo de las imágenes */
+  color: #111111; /* Color de texto por defecto */
+  text-decoration: none; /* Quita subrayado por defecto (puedes añadirlo al hover) */
 }
 
 a {
-  color: #007bff; /* Color de enlace base */
+  color: #111111; /* Color de enlace base */
   text-decoration: none; /* Quita subrayado por defecto (puedes añadirlo al hover) */
 }
 
 a:hover,
 a:focus {
-  text-decoration: underline; /* Añade feedback visual */
-  /* ¡Asegúrate de que :focus tenga un estilo claro visible! */
-  outline: 2px solid blue; /* Ejemplo de outline para focus */
-  outline-offset: 2px;
+  color: #d41929; /* Color de enlace al pasar el ratón o al enfocar */
+  text-decoration: underline; /* Añade subrayado al hover/focus */
 }
 
 /* Añade estilos base para listas si es necesario (ej. quitar viñetas a navs) */
@@ -62,9 +67,13 @@ ul {
 
 .site-header .logo span {
   /* O .logo img si usas imagen */
-  font-weight: bold;
-  font-size: 1.5rem;
+  font-weight: bold; /* Negrita para el logo */
+  font-size: 1.3rem;
   color: #d41929; /* Color del logo */
+  text-transform: uppercase; /* Opcional: transforma a mayúsculas */
+  letter-spacing: 1px; /* Espaciado entre letras */
+  text-decoration: none; /* Quita subrayado */
+  transition: color 0.3s ease; /* Transición suave para hover */
 }
 
 /* Estilos base para Nav (Mobile - podría estar oculto inicialmente) */
@@ -123,7 +132,7 @@ h2 {
   font-size: 1.8rem;
   text-align: center;
   margin-bottom: 2rem;
-  color: #555;
+  color: #111111;
 }
 
 /* Services Grid (Mobile: probablemente 1 columna) */
@@ -145,8 +154,8 @@ h2 {
 }
 
 .service-item img {
-  max-width: 80px; /* Tamaño de iconos/imágenes de servicio */
   margin: 0 auto 1rem;
+  display: block; /* Centrado */
 }
 
 .service-item h3,
