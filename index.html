@@ -222,246 +222,276 @@
         </div>
       </section>
 
-      <section
-        class="featured-projects" /* Se quitó bg-background-secondary ya que no está definida en CSS */
-        aria-labelledby="projects-heading"
-      >
+      <section class="featured-projects" aria-labelledby="projects-heading">
         <div class="container">
           <h2 id="projects-heading">Proyectos Destacados</h2>
 
           <!-- Contenedor para Scroll Horizontal -->
           <div class="projects-scroll-container">
+            <!-- Project Card Desarrollo de Software -->
+            <article class="project-card">
+              <div class="project-image-container">
+                <a href="proyectos/crm-medida-empresa-x.html">
+                  <img
+                    src="img/proyecto-crm.jpg"
+                    alt="Dashboard principal del CRM desarrollado para Empresa X"
+                  />
+                </a>
+                <div class="project-tags">
+                  <span class="service-tag-component"
+                    >Desarrollo de Software</span
+                  >
+                  <span class="service-tag-component">Web App</span>
+                  <span class="service-tag-component">CRM</span>
+                </div>
+              </div>
+              <div class="project-content">
+                <p class="card-client">Empresa X (Sector Industrial)</p>
+                <h3>
+                  <a href="proyectos/crm-medida-empresa-x.html">
+                    CRM a Medida para Gestión Comercial
+                  </a>
+                </h3>
+                <p class="project-description">
+                  Desarrollo de un sistema CRM web personalizado para optimizar
+                  el seguimiento de oportunidades de venta y la gestión de
+                  clientes.
+                </p>
+                <div class="project-tech-stack">
+                  <span class="tech-stack-tag">React</span>
+                  <span class="tech-stack-tag">Node.js</span>
+                  <span class="tech-stack-tag">PostgreSQL</span>
+                  <span class="tech-stack-tag">AWS</span>
+                </div>
+                <!-- Botón Ver Caso añadido -->
+                <a
+                  href="proyectos/crm-medida-empresa-x.html"
+                  class="button button-project"
+                  >Ver Caso</a
+                >
+              </div>
+            </article>
 
-                <!-- Project Card Desarrollo de Software -->
-                <article class="project-card">
-                  <div class="project-image-container">
-                    <a href="proyectos/crm-medida-empresa-x.html">
-                      <img
-                        src="img/proyecto-crm.jpg"
-                        alt="Dashboard principal del CRM desarrollado para Empresa X"
-                      />
-                    </a>
-                    <div class="project-tags">
-                      <span class="service-tag-component">Desarrollo de Software</span>
-                      <span class="service-tag-component">Web App</span>
-                      <span class="service-tag-component">CRM</span>
-                    </div>
-                  </div>
-                  <div class="project-content">
-                    <p class="card-client">Empresa X (Sector Industrial)</p>
-                    <h3>
-                      <a href="proyectos/crm-medida-empresa-x.html">
-                        CRM a Medida para Gestión Comercial
-                      </a>
-                    </h3>
-                    <p class="project-description">
-                      Desarrollo de un sistema CRM web personalizado para optimizar el
-                      seguimiento de oportunidades de venta y la gestión de clientes.
-                    </p>
-                    <div class="project-tech-stack">
-                      <span class="tech-stack-tag">React</span>
-                      <span class="tech-stack-tag">Node.js</span>
-                      <span class="tech-stack-tag">PostgreSQL</span>
-                      <span class="tech-stack-tag">AWS</span>
-                    </div>
-                    <!-- Botón Ver Caso añadido -->
-                    <a href="proyectos/crm-medida-empresa-x.html" class="button button-project">Ver Caso</a>
-                  </div>
-                </article>
+            <!-- Project Card Machine Learning / Generative AI -->
+            <article class="project-card">
+              <div class="project-image-container">
+                <a href="proyectos/sistema-recomendacion-ecommerce.html">
+                  <img
+                    src="img/proyecto-recomendacion.jpg"
+                    alt="Interfaz mostrando recomendaciones de productos personalizadas"
+                  />
+                </a>
+                <div class="project-tags">
+                  <span class="service-tag-component">Machine Learning</span>
+                  <span class="service-tag-component">E-commerce</span>
+                  <span class="service-tag-component">Python</span>
+                </div>
+              </div>
+              <div class="project-content">
+                <p class="card-client">Tienda Online Innovadora</p>
+                <h3>
+                  <a href="proyectos/sistema-recomendacion-ecommerce.html">
+                    Sistema de Recomendación de Productos
+                  </a>
+                </h3>
+                <p class="project-description">
+                  Implementación de un motor de recomendación basado en ML para
+                  personalizar la experiencia de compra y aumentar la
+                  conversión.
+                </p>
+                <div class="project-tech-stack">
+                  <span class="tech-stack-tag">Python</span>
+                  <span class="tech-stack-tag">Scikit-learn</span>
+                  <span class="tech-stack-tag">Flask</span>
+                  <span class="tech-stack-tag">Docker</span>
+                </div>
+                <!-- Botón Ver Caso añadido -->
+                <a
+                  href="proyectos/sistema-recomendacion-ecommerce.html"
+                  class="button button-project"
+                  >Ver Caso</a
+                >
+              </div>
+            </article>
 
-                <!-- Project Card Machine Learning / Generative AI -->
-                <article class="project-card">
-                  <div class="project-image-container">
-                    <a href="proyectos/sistema-recomendacion-ecommerce.html">
-                      <img
-                        src="img/proyecto-recomendacion.jpg"
-                        alt="Interfaz mostrando recomendaciones de productos personalizadas"
-                      />
-                    </a>
-                    <div class="project-tags">
-                      <span class="service-tag-component">Machine Learning</span>
-                      <span class="service-tag-component">E-commerce</span>
-                      <span class="service-tag-component">Python</span>
-                    </div>
-                  </div>
-                  <div class="project-content">
-                    <p class="card-client">Tienda Online Innovadora</p>
-                    <h3>
-                      <a href="proyectos/sistema-recomendacion-ecommerce.html">
-                        Sistema de Recomendación de Productos
-                      </a>
-                    </h3>
-                    <p class="project-description">
-                      Implementación de un motor de recomendación basado en ML para
-                      personalizar la experiencia de compra y aumentar la conversión.
-                    </p>
-                    <div class="project-tech-stack">
-                      <span class="tech-stack-tag">Python</span>
-                      <span class="tech-stack-tag">Scikit-learn</span>
-                      <span class="tech-stack-tag">Flask</span>
-                      <span class="tech-stack-tag">Docker</span>
-                    </div>
-                    <!-- Botón Ver Caso añadido -->
-                     <a href="proyectos/sistema-recomendacion-ecommerce.html" class="button button-project">Ver Caso</a>
-                  </div>
-                </article>
+            <!-- Project Card Business intelligence y Data Visualization -->
+            <article class="project-card">
+              <div class="project-image-container">
+                <a href="proyectos/dashboard-kpi-financiera.html">
+                  <img
+                    src="img/proyecto-dashboard-bi.jpg"
+                    alt="Dashboard interactivo con KPIs financieros clave"
+                  />
+                </a>
+                <div class="project-tags">
+                  <span class="service-tag-component"
+                    >Business Intelligence</span
+                  >
+                  <span class="service-tag-component">Data Visualization</span>
+                </div>
+              </div>
+              <div class="project-content">
+                <p class="card-client">Consultora Financiera Global</p>
+                <h3>
+                  <a href="proyectos/dashboard-kpi-financiera.html">
+                    Dashboard de KPIs Financieros
+                  </a>
+                </h3>
+                <p class="project-description">
+                  Diseño y desarrollo de un panel de control interactivo para
+                  visualizar métricas financieras críticas y apoyar la toma de
+                  decisiones estratégicas.
+                </p>
+                <div class="project-tech-stack">
+                  <span class="tech-stack-tag">Tableau</span>
+                  <span class="tech-stack-tag">SQL Server</span>
+                  <span class="tech-stack-tag">Python (ETL)</span>
+                </div>
+                <!-- Botón Ver Caso añadido -->
+                <a
+                  href="proyectos/dashboard-kpi-financiera.html"
+                  class="button button-project"
+                  >Ver Caso</a
+                >
+              </div>
+            </article>
 
-                <!-- Project Card Business intelligence y Data Visualization -->
-                <article class="project-card">
-                  <div class="project-image-container">
-                    <a href="proyectos/dashboard-kpi-financiera.html">
-                      <img
-                        src="img/proyecto-dashboard-bi.jpg"
-                        alt="Dashboard interactivo con KPIs financieros clave"
-                      />
-                    </a>
-                    <div class="project-tags">
-                      <span class="service-tag-component">Business Intelligence</span>
-                      <span class="service-tag-component">Data Visualization</span>
-                    </div>
-                  </div>
-                  <div class="project-content">
-                    <p class="card-client">Consultora Financiera Global</p>
-                    <h3>
-                      <a href="proyectos/dashboard-kpi-financiera.html">
-                        Dashboard de KPIs Financieros
-                      </a>
-                    </h3>
-                    <p class="project-description">
-                      Diseño y desarrollo de un panel de control interactivo para
-                      visualizar métricas financieras críticas y apoyar la toma de
-                      decisiones estratégicas.
-                    </p>
-                    <div class="project-tech-stack">
-                      <span class="tech-stack-tag">Tableau</span>
-                      <span class="tech-stack-tag">SQL Server</span>
-                      <span class="tech-stack-tag">Python (ETL)</span>
-                    </div>
-                     <!-- Botón Ver Caso añadido -->
-                     <a href="proyectos/dashboard-kpi-financiera.html" class="button button-project">Ver Caso</a>
-                  </div>
-                </article>
+            <!-- Project Card Diseño UX & UI-->
+            <article class="project-card">
+              <div class="project-image-container">
+                <a href="proyectos/rediseno-app-salud.html">
+                  <img
+                    src="img/proyecto-ux-app.jpg"
+                    alt="Prototipo de la nueva interfaz de usuario para aplicación de salud"
+                  />
+                </a>
+                <div class="project-tags">
+                  <span class="service-tag-component">Diseño UX</span>
+                  <span class="service-tag-component">Diseño UI</span>
+                  <span class="service-tag-component">Mobile App</span>
+                </div>
+              </div>
+              <div class="project-content">
+                <p class="card-client">Startup Salud Digital</p>
+                <h3>
+                  <a href="proyectos/rediseno-app-salud.html">
+                    Rediseño UX/UI de Aplicación Móvil de Salud
+                  </a>
+                </h3>
+                <p class="project-description">
+                  Proceso completo de investigación, prototipado y diseño de
+                  interfaz para mejorar la usabilidad y la experiencia del
+                  usuario de una app de bienestar.
+                </p>
+                <div class="project-tech-stack">
+                  <span class="tech-stack-tag">Figma</span>
+                  <span class="tech-stack-tag">UserTesting</span>
+                  <span class="tech-stack-tag">Maze</span>
+                </div>
+                <!-- Botón Ver Caso añadido -->
+                <a
+                  href="proyectos/rediseno-app-salud.html"
+                  class="button button-project"
+                  >Ver Caso</a
+                >
+              </div>
+            </article>
 
-                <!-- Project Card Diseño UX & UI-->
-                <article class="project-card">
-                  <div class="project-image-container">
-                    <a href="proyectos/rediseno-app-salud.html">
-                      <img
-                        src="img/proyecto-ux-app.jpg"
-                        alt="Prototipo de la nueva interfaz de usuario para aplicación de salud"
-                      />
-                    </a>
-                    <div class="project-tags">
-                      <span class="service-tag-component">Diseño UX</span>
-                      <span class="service-tag-component">Diseño UI</span>
-                      <span class="service-tag-component">Mobile App</span>
-                    </div>
-                  </div>
-                  <div class="project-content">
-                    <p class="card-client">Startup Salud Digital</p>
-                    <h3>
-                      <a href="proyectos/rediseno-app-salud.html">
-                        Rediseño UX/UI de Aplicación Móvil de Salud
-                      </a>
-                    </h3>
-                    <p class="project-description">
-                      Proceso completo de investigación, prototipado y diseño de
-                      interfaz para mejorar la usabilidad y la experiencia del usuario
-                      de una app de bienestar.
-                    </p>
-                    <div class="project-tech-stack">
-                      <span class="tech-stack-tag">Figma</span>
-                      <span class="tech-stack-tag">UserTesting</span>
-                      <span class="tech-stack-tag">Maze</span>
-                    </div>
-                     <!-- Botón Ver Caso añadido -->
-                    <a href="proyectos/rediseno-app-salud.html" class="button button-project">Ver Caso</a>
-                  </div>
-                </article>
+            <!-- Project Card Desarrollo de Aplicaciones -->
+            <article class="project-card">
+              <div class="project-image-container">
+                <a href="proyectos/app-logistica-transporte.html">
+                  <img
+                    src="img/proyecto-app-logistica.jpg"
+                    alt="Aplicación móvil para gestión de rutas de transporte"
+                  />
+                </a>
+                <div class="project-tags">
+                  <span class="service-tag-component"
+                    >Desarrollo de Aplicaciones</span
+                  >
+                  <span class="service-tag-component">Mobile App</span>
+                  <span class="service-tag-component">Logística</span>
+                </div>
+              </div>
+              <div class="project-content">
+                <p class="card-client">Compañía de Transporte Nacional</p>
+                <h3>
+                  <a href="proyectos/app-logistica-transporte.html">
+                    App Móvil para Optimización Logística
+                  </a>
+                </h3>
+                <p class="project-description">
+                  Creación de una aplicación móvil multiplataforma para que los
+                  conductores gestionen rutas, entregas y comunicación en tiempo
+                  real.
+                </p>
+                <div class="project-tech-stack">
+                  <span class="tech-stack-tag">React Native</span>
+                  <span class="tech-stack-tag">Firebase</span>
+                  <span class="tech-stack-tag">Google Maps API</span>
+                </div>
+                <!-- Botón Ver Caso añadido -->
+                <a
+                  href="proyectos/app-logistica-transporte.html"
+                  class="button button-project"
+                  >Ver Caso</a
+                >
+              </div>
+            </article>
 
-                <!-- Project Card Desarrollo de Aplicaciones -->
-                <article class="project-card">
-                  <div class="project-image-container">
-                    <a href="proyectos/app-logistica-transporte.html">
-                      <img
-                        src="img/proyecto-app-logistica.jpg"
-                        alt="Aplicación móvil para gestión de rutas de transporte"
-                      />
-                    </a>
-                    <div class="project-tags">
-                      <span class="service-tag-component">Desarrollo de Aplicaciones</span>
-                      <span class="service-tag-component">Mobile App</span>
-                      <span class="service-tag-component">Logística</span>
-                    </div>
-                  </div>
-                  <div class="project-content">
-                    <p class="card-client">Compañía de Transporte Nacional</p>
-                    <h3>
-                      <a href="proyectos/app-logistica-transporte.html">
-                        App Móvil para Optimización Logística
-                      </a>
-                    </h3>
-                    <p class="project-description">
-                      Creación de una aplicación móvil multiplataforma para que los
-                      conductores gestionen rutas, entregas y comunicación en tiempo
-                      real.
-                    </p>
-                    <div class="project-tech-stack">
-                      <span class="tech-stack-tag">React Native</span>
-                      <span class="tech-stack-tag">Firebase</span>
-                      <span class="tech-stack-tag">Google Maps API</span>
-                    </div>
-                     <!-- Botón Ver Caso añadido -->
-                     <a href="proyectos/app-logistica-transporte.html" class="button button-project">Ver Caso</a>
-                  </div>
-                </article>
-
-                <!-- Project Card Soporte y desarrollo evolutivo -->
-                <article class="project-card">
-                  <div class="project-image-container">
-                    <a href="proyectos/soporte-plataforma-saas.html">
-                      <img
-                        src="img/proyecto-soporte-saas.jpg"
-                        alt="Equipo trabajando en mantenimiento de plataforma SaaS"
-                      />
-                    </a>
-                    <div class="project-tags">
-                      <span class="service-tag-component">Soporte Evolutivo</span>
-                      <span class="service-tag-component">Mantenimiento</span>
-                      <span class="service-tag-component">SaaS</span>
-                    </div>
-                  </div>
-                  <div class="project-content">
-                    <p class="card-client">Plataforma SaaS Educativa</p>
-                    <h3>
-                      <a href="proyectos/soporte-plataforma-saas.html">
-                        Mantenimiento y Evolución de Plataforma SaaS
-                      </a>
-                    </h3>
-                    <p class="project-description">
-                      Servicio continuo de soporte técnico, actualizaciones de
-                      seguridad y desarrollo de nuevas funcionalidades para una
-                      plataforma SaaS líder en el sector educativo.
-                    </p>
-                    <div class="project-tech-stack">
-                      <span class="tech-stack-tag">PHP (Laravel)</span>
-                      <span class="tech-stack-tag">Vue.js</span>
-                      <span class="tech-stack-tag">MySQL</span>
-                      <span class="tech-stack-tag">Jenkins</span>
-                    </div>
-                     <!-- Botón Ver Caso añadido -->
-                    <a href="proyectos/soporte-plataforma-saas.html" class="button button-project">Ver Caso</a>
-                  </div>
-                </article>
-
-            </div> <!-- Fin projects-scroll-container -->
-        </div> <!-- Fin container -->
-      </section> <!-- Fin featured-projects -->
+            <!-- Project Card Soporte y desarrollo evolutivo -->
+            <article class="project-card">
+              <div class="project-image-container">
+                <a href="proyectos/soporte-plataforma-saas.html">
+                  <img
+                    src="img/proyecto-soporte-saas.jpg"
+                    alt="Equipo trabajando en mantenimiento de plataforma SaaS"
+                  />
+                </a>
+                <div class="project-tags">
+                  <span class="service-tag-component">Soporte Evolutivo</span>
+                  <span class="service-tag-component">Mantenimiento</span>
+                  <span class="service-tag-component">SaaS</span>
+                </div>
+              </div>
+              <div class="project-content">
+                <p class="card-client">Plataforma SaaS Educativa</p>
+                <h3>
+                  <a href="proyectos/soporte-plataforma-saas.html">
+                    Mantenimiento y Evolución de Plataforma SaaS
+                  </a>
+                </h3>
+                <p class="project-description">
+                  Servicio continuo de soporte técnico, actualizaciones de
+                  seguridad y desarrollo de nuevas funcionalidades para una
+                  plataforma SaaS líder en el sector educativo.
+                </p>
+                <div class="project-tech-stack">
+                  <span class="tech-stack-tag">PHP (Laravel)</span>
+                  <span class="tech-stack-tag">Vue.js</span>
+                  <span class="tech-stack-tag">MySQL</span>
+                  <span class="tech-stack-tag">Jenkins</span>
+                </div>
+                <!-- Botón Ver Caso añadido -->
+                <a
+                  href="proyectos/soporte-plataforma-saas.html"
+                  class="button button-project"
+                  >Ver Caso</a
+                >
+              </div>
+            </article>
+          </div>
+          <!-- Fin projects-scroll-container -->
+        </div>
+        <!-- Fin container -->
+      </section>
+      <!-- Fin featured-projects -->
     </main>
 
     <footer class="site-footer">
       <div class="container footer-content">
-        <p>© 2024 Software Consultores. Todos los derechos reservados.</p>
+        <p>© 2025 Hecha con cariño Felipe Morales</p>
         <nav aria-label="Redes Sociales">
           <ul class="social-media">
             <li>
