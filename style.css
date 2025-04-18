@@ -10,6 +10,8 @@
   --color-background-body: #fff;
   --color-background-light: #f8f9fa;
   --color-background-medium: #e9ecef;
+  --color-background-dark: #343a40;
+  --color-background-dark-contrast: #495057;
   --color-border-light: #eee;
   --color-tag-bg: rgba(17, 17, 17, 0.7);
   --color-tech-tag-bg: #e9ecef;
@@ -23,7 +25,8 @@
   --shadow-light: 0 2px 5px rgba(0, 0, 0, 0.05);
   --shadow-medium: 0 4px 10px rgba(0, 0, 0, 0.1);
 
-  --header-height: 5rem; /* Aproximado, ajustar si es necesario */
+  --header-height: 5rem; /* Ajustar según la altura real del header fijo */
+  --section-spacing-vertical: 3rem;
 }
 
 /* === RESET BÁSICO === */
@@ -57,7 +60,7 @@ img {
   max-width: 100%;
   height: auto;
   display: block;
-  vertical-align: middle; /* Previene espacio extra si es inline */
+  vertical-align: middle;
 }
 
 a {
@@ -69,15 +72,12 @@ a:hover {
   color: var(--color-primary);
   text-decoration: underline;
 }
-/* Estilo de foco visible claro */
 a:focus-visible {
   color: var(--color-primary);
   text-decoration: underline;
   outline: 2px solid var(--color-focus-ring);
   outline-offset: 2px;
-  border-radius: var(
-    --border-radius-small
-  ); /* Para que el outline se vea mejor en esquinas */
+  border-radius: var(--border-radius-small);
 }
 
 ul {
@@ -87,7 +87,8 @@ ul {
 h1,
 h2,
 h3 {
-  line-height: 1.3; /* Mejor espaciado para títulos */
+  line-height: 1.3;
+  font-weight: 700; /* Aplicar negrita a todos los títulos */
 }
 
 /* === LAYOUT === */
@@ -99,65 +100,99 @@ h3 {
 }
 
 /* === HEADER === */
+.site-header {
+  /* Opcional: Añadir sombra o borde si el header es fijo o sobre contenido */
+  /* position: sticky; */
+  /* top: 0; */
+  /* background-color: var(--color-background-body); */
+  /* z-index: 10; */
+  /* box-shadow: 0 2px 4px rgba(0,0,0,0.05); */
+}
+
 .site-header .header-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 0;
+  padding: 1rem 0; /* Reducir padding si es necesario */
+  min-height: calc(
+    var(--header-height) - 2rem
+  ); /* Ajustar para scroll-padding */
 }
 
-.site-header .logo span {
-  font-weight: 700; /* Usar valor numérico de fuente */
-  font-size: 1.3rem;
-  color: var(--color-primary);
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  text-decoration: none;
-  transition: color 0.3s ease;
+/* CORRECCIÓN: Eliminar regla .site-header .logo span */
+
+/* Estilos para la imagen del logo dentro del enlace */
+.site-header .logo a {
+  display: inline-block; /* Para que el focus-visible funcione bien */
 }
-/* Evitar subrayado en logo al interactuar con el enlace padre */
-.site-header .logo a:hover span,
-.site-header .logo a:focus span {
-  text-decoration: none;
-  color: var(--color-primary-dark);
+.site-header .logo img {
+  height: 80px; /* Ajustar altura deseada del logo */
+  width: auto; /* Mantener proporción */
+  vertical-align: middle; /* Alinear bien si hay texto al lado */
 }
+/* Quitar outline del enlace padre del logo cuando el foco está en la imagen */
 .site-header .logo a:focus-visible {
-  outline: none; /* Quitar outline del enlace padre si el foco es en el span */
+  outline: none;
 }
-.site-header .logo a:focus-visible span {
-  outline: 2px solid var(--color-focus-ring); /* Poner outline en el span */
+/* Aplicar outline directamente a la imagen del logo para el foco */
+.site-header .logo a:focus-visible img {
+  outline: 2px solid var(--color-focus-ring);
   outline-offset: 3px;
   border-radius: var(--border-radius-small);
 }
 
+/* CORRECCIÓN: Eliminar regla .logo { ... } que estaba fuera de lugar */
+
 /* === NAVEGACIÓN PRINCIPAL === */
 .main-nav ul {
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /* Por defecto móvil */
   gap: 0.5rem;
 }
 .main-nav a {
-  padding: 0.3rem 0; /* Añadir padding para mejor área de click */
+  padding: 0.5rem 0.8rem; /* Aumentar área de click */
+  display: inline-block; /* Necesario para padding vertical */
+  border-radius: var(
+    --border-radius-small
+  ); /* Para que el focus-visible se vea mejor */
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+/* Añadir feedback visual extra en hover/focus para nav */
+.main-nav a:hover {
+  color: var(--color-primary);
+  background-color: var(--color-background-light);
+  text-decoration: none; /* Quitar subrayado si hay fondo */
+}
+.main-nav a:focus-visible {
+  color: var(--color-primary);
+  background-color: var(--color-background-light);
+  text-decoration: none;
+  outline-offset: 1px; /* Más pegado por el padding */
 }
 
 /* === HERO SECTION === */
 .hero-section {
   padding: 4rem 0;
 }
+/* Estilos para el párrafo introductorio del Hero */
+.hero-section p {
+  color: var(--color-text-muted);
+  margin-bottom: 0.5rem;
+  text-align: left;
+}
 
 .hero-section h1 {
   font-size: 2rem;
   margin-bottom: 2rem;
   text-align: left;
-  font-weight: 700;
 }
 
 .decorative-arrow {
   width: 40px;
-  margin: 3rem 0 0 0; /* Alineado izquierda */
+  margin: 3rem auto 0; /* Centrado horizontalmente */
 }
 .decorative-arrow img {
-  width: 100%; /* Asegurar que la imagen llene el div */
+  width: 100%;
 }
 
 /* === SECCIONES GENERALES === */
@@ -170,12 +205,17 @@ h2 {
   /* Títulos de Sección */
   font-size: 1.8rem;
   text-align: center;
-  margin-bottom: 2rem;
+  /* margin-bottom se maneja con gap en .services-section .container */
   color: var(--color-text-base);
-  font-weight: 700;
 }
 
 /* === SECCIÓN DE SERVICIOS === */
+.services-section .container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--section-spacing-vertical);
+}
+
 .services-grid {
   display: grid;
   gap: 2rem;
@@ -189,6 +229,8 @@ h2 {
   border-radius: var(--border-radius-medium);
   box-shadow: var(--shadow-light);
   transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  display: flex;
+  flex-direction: column;
 }
 
 .service-item:hover {
@@ -201,8 +243,9 @@ h2 {
   display: block;
   width: 40px;
   height: 40px;
-  color: var(--color-primary); /* Color base para los iconos */
+  color: var(--color-primary);
   transition: color 0.3s ease;
+  flex-shrink: 0;
 }
 
 .service-item:hover svg {
@@ -212,61 +255,78 @@ h2 {
 .service-item h3 {
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
-  font-weight: 700;
+  flex-shrink: 0;
 }
 
 .service-item h3 a {
   color: inherit;
   text-decoration: none;
+  border-radius: var(--border-radius-small); /* Para focus-visible */
 }
-.service-item h3 a:hover,
-.service-item h3 a:focus-visible {
+.service-item h3 a:hover {
   color: var(--color-primary);
   text-decoration: underline;
 }
 .service-item h3 a:focus-visible {
-  outline-offset: 1px; /* Ajustar offset para texto */
+  color: var(--color-primary);
+  text-decoration: underline;
+  outline-offset: 1px;
 }
 
 .service-item p {
   font-size: 0.95rem;
   color: var(--color-text-muted);
   text-align: left;
+  flex-grow: 1;
+  margin-top: auto; /* Asegura que el párrafo empiece después del h3 si este es corto */
 }
 
-/* === CALL TO ACTION (Dentro de Servicios) === */
+/* === CALL TO ACTION (Dentro de Servicios Grid) === */
 .cta-item {
   background-color: var(--color-background-medium);
   padding: 2rem 1.5rem;
   border-radius: var(--border-radius-medium);
+  display: grid;
+  justify-items: center;
+  gap: 1rem;
   text-align: center;
+  /* Opcional: Si quieres que también tenga sombra */
+  /* box-shadow: var(--shadow-light); */
+  /* transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; */
 }
+/* Quitar hover del CTA si ya no es interactivo como tarjeta */
+/* .cta-item:hover {
+  box-shadow: var(--shadow-medium);
+  transform: translateY(-3px);
+} */
 
 .cta-question {
   font-weight: 700;
-  margin-bottom: 1rem;
+  /* CORRECCIÓN: Eliminado margin-bottom redundante */
 }
 
 /* === BOTONES === */
 .button {
-  /* Estilo base para todos los botones */
   display: inline-block;
   padding: 0.8rem 1.5rem;
   background-color: var(--color-primary);
   color: var(--color-text-light);
-  border: none;
-  border-radius: var(--border-radius-large); /* Más redondeado */
-  font-weight: 700;
+  border: 1px solid transparent; /* Añadir borde transparente para evitar saltos en focus */
+  border-radius: var(--border-radius-large);
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1;
   text-decoration: none;
   cursor: pointer;
   text-align: center;
-  transition: background-color 0.2s ease, transform 0.1s ease;
+  transition: background-color 0.2s ease, transform 0.1s ease,
+    border-color 0.2s ease;
 }
 
 .button:hover {
   background-color: var(--color-primary-dark);
   color: var(--color-text-light);
-  text-decoration: none; /* Quitar subrayado default de hover */
+  text-decoration: none;
 }
 .button:active {
   transform: scale(0.98);
@@ -276,39 +336,45 @@ h2 {
   background-color: var(--color-primary-dark);
   color: var(--color-text-light);
   text-decoration: none;
-  outline: 3px solid var(--color-focus-ring);
-  outline-offset: 2px;
+  outline: 2px solid var(--color-focus-ring); /* Outline más delgado */
+  outline-offset: 1px; /* Más pegado */
+  border-color: var(
+    --color-primary-dark
+  ); /* Cambiar borde para mejor visibilidad del outline */
 }
 
 .button-project {
-  /* Estilo específico para el botón "Ver Caso" */
-  margin-top: 1rem; /* Espacio sobre el botón */
-  display: block; /* Ocupa ancho disponible si se prefiere */
-  width: fit-content; /* O ajusta al contenido */
-  margin-left: auto; /* Centrar si es block y width fit-content */
-  margin-right: auto; /* Centrar */
+  margin-top: 1rem;
+  display: block;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* === SECCIÓN DE PROYECTOS DESTACADOS === */
 .featured-projects {
-  /* Si necesitas el fondo, defínelo con la variable o color directo */
   background-color: var(--color-background-light);
   padding-top: 3rem;
-  padding-bottom: 4rem; /* Más espacio abajo por el scroll */
+  padding-bottom: 4rem;
+}
+.featured-projects .container {
+  /* Usar flexbox para el espaciado vertical interno si es necesario */
+  display: flex;
+  flex-direction: column;
+  gap: var(--section-spacing-vertical);
 }
 
 /* --- Implementación Scroll Horizontal (Solo CSS) --- */
 .projects-scroll-container {
   display: flex;
-  overflow-x: auto; /* Habilita scroll horizontal */
-  overflow-y: hidden; /* Oculta scroll vertical si lo hubiera */
-  gap: 1.5rem; /* Espacio entre tarjetas */
-  padding: 1rem 0.5rem 1.5rem 0.5rem; /* Padding para que las sombras/bordes no se corten y espacio para scrollbar */
-  margin-left: -0.5rem; /* Compensa padding izquierdo para alinear con container */
-  margin-right: -0.5rem; /* Compensa padding derecho */
-  /* Estilo opcional para la barra de scroll (WebKit) */
+  overflow-x: auto;
+  overflow-y: hidden;
+  gap: 1.5rem;
+  padding: 1rem 0.5rem 1.5rem 0.5rem;
+  margin: 0 -0.5rem; /* Simplificado margen negativo */
+  /* Scrollbar Styling (WebKit) */
   &::-webkit-scrollbar {
-    height: 8px; /* Altura de la barra */
+    height: 8px;
   }
   &::-webkit-scrollbar-track {
     background: var(--color-background-medium);
@@ -317,42 +383,59 @@ h2 {
   &::-webkit-scrollbar-thumb {
     background-color: var(--color-text-subtle);
     border-radius: 4px;
-    border: 2px solid var(--color-background-medium); /* Crea un borde alrededor */
+    border: 2px solid var(--color-background-medium);
   }
   &::-webkit-scrollbar-thumb:hover {
     background-color: var(--color-text-muted);
   }
+  /* Scrollbar Styling (Firefox) */
+  scrollbar-width: thin; /* "auto" or "thin" */
+  scrollbar-color: var(--color-text-subtle) var(--color-background-medium); /* thumb track */
 }
 
 .project-card {
-  flex: 0 0 auto; /* Evita que la tarjeta se encoja/expanda */
-  width: 320px; /* Ancho fijo para cada tarjeta, ajusta según necesites */
-  display: flex; /* Permite que el contenido crezca */
-  flex-direction: column; /* Apila imagen, contenido */
-}
-.project-content {
-  flex-grow: 1; /* Hace que esta sección ocupe el espacio restante */
+  flex: 0 0 auto;
+  width: 320px;
   display: flex;
-  flex-direction: column; /* Apila elementos internos */
+  flex-direction: column;
+  border: 1px solid var(--color-border-light); /* Añadido borde consistente con service-item */
+  background-color: var(--color-background-body);
+  border-radius: var(--border-radius-medium);
+  box-shadow: var(--shadow-light);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+.project-card:hover {
+  box-shadow: var(--shadow-medium);
+  transform: translateY(-3px);
+}
+
+.project-content {
+  padding: 1.5rem; /* Añadir padding al contenido */
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
 }
 .project-description {
-  flex-grow: 1; /* Hace que la descripción ocupe espacio disponible antes del stack/botón */
+  flex-grow: 1;
+  margin-bottom: 1rem; /* Espacio antes del tech stack */
 }
 
 /* --- Estilos Tarjeta Proyecto --- */
 .project-image-container {
   position: relative;
-  margin-bottom: 1rem;
+  /* margin-bottom ya no es necesario si el padding está en .project-content */
   overflow: hidden;
-  border-radius: var(--border-radius-small);
+  /* Aplicar border-radius solo a las esquinas superiores */
+  border-top-left-radius: var(--border-radius-medium);
+  border-top-right-radius: var(--border-radius-medium);
 }
-/* Opcional: Efecto zoom suave en imagen al hacer hover en la tarjeta */
 .project-card:hover .project-image-container img {
   transform: scale(1.05);
   transition: transform 0.3s ease-out;
 }
 .project-image-container img {
-  transition: transform 0.3s ease-out; /* Transición para el zoom */
+  transition: transform 0.3s ease-out;
 }
 
 .project-tags {
@@ -371,9 +454,6 @@ h2 {
   border-radius: var(--border-radius-large);
   font-weight: 500;
 }
-.project-content {
-  text-align: left;
-}
 .card-client {
   font-size: 0.75rem;
   color: var(--color-text-subtle);
@@ -384,7 +464,8 @@ h2 {
 
 /* --- Estilos Pastillas Tech Stack --- */
 .project-tech-stack {
-  margin-top: 1rem;
+  margin-top: auto; /* Empuja hacia abajo si la descripción es corta */
+  margin-bottom: 1rem; /* Espacio antes del botón Ver Caso */
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
@@ -423,33 +504,34 @@ h2 {
 .social-media a {
   color: var(--color-text-muted);
   text-decoration: none;
+  padding: 0.25rem; /* Área de click para iconos */
+  border-radius: var(--border-radius-small);
 }
 .social-media a:hover,
 .social-media a:focus-visible {
   color: var(--color-primary);
-  text-decoration: none; /* Evitar subrayado en iconos */
 }
 .social-media a:focus-visible {
-  outline-offset: 4px; /* Más espacio para iconos */
+  outline: 2px solid var(--color-focus-ring);
+  outline-offset: 1px;
 }
 
 /* === MEDIA QUERIES (RESPONSIVE) === */
 @media (min-width: 768px) {
-  .hero-section h1 {
-    font-size: 2.8rem;
-    /* Considera quitar <br> con JS o CSS display:none en span si es necesario */
-  }
-
   .main-nav ul {
     flex-direction: row;
     gap: 1.5rem;
+  }
+
+  .hero-section h1 {
+    font-size: 2.8rem;
   }
 
   .services-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .cta-item {
+  .services-grid .cta-item {
     grid-column: 1 / -1;
     display: flex;
     justify-content: space-between;
@@ -457,7 +539,7 @@ h2 {
     text-align: left;
     padding: 1.5rem 2rem;
   }
-  .cta-question {
+  .services-grid .cta-item .cta-question {
     margin-bottom: 0;
   }
 
@@ -476,37 +558,27 @@ h2 {
   .services-grid {
     grid-template-columns: repeat(3, 1fr);
   }
-  .cta-item {
-    /* Decide si lo quieres ancho o en una columna */
-    /* Opción 1: Ancho */
-    grid-column: 1 / -1;
+
+  .services-grid .cta-item {
+    grid-column: 1 / -1; /* Mantener ancho completo */
     flex-direction: row;
     text-align: left;
-    /* Opción 2: Una columna */
-    /* grid-column: auto; */
-    /* flex-direction: column; */
-    /* text-align: center; */
   }
-  .cta-item .cta-question {
-    /* Asegurar margen si vuelve a columna */
-    margin-bottom: 1rem; /* O 0 si es flex row */
+  .services-grid .cta-item .cta-question {
+    margin-bottom: 0; /* Asegurar que no haya margen si es flex row */
   }
 
   .hero-section h1 {
     font-size: 3.2rem;
   }
 
-  /* Mejorar espaciado en nav para pantallas grandes */
   .main-nav ul {
     gap: 2rem;
   }
 }
 
 @media (min-width: 1200px) {
-  .container {
-    /* max-width: 1280px; */
-  }
-  .hero-section {
-    padding: 6rem 0;
-  }
+  /* Ajustes opcionales para pantallas muy grandes */
+  /* .container { max-width: 1280px; } */
+  /* .hero-section { padding: 7rem 0; } */
 }

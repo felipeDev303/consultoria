@@ -11,7 +11,11 @@
       name="keywords"
       content="software, consultores, desarrollo web, machine learning, inteligencia de negocios, diseño ux, diseño ui, aplicaciones móviles"
     />
-    <title>Software Consultores - Soluciones Digitales Personalizadas</title>
+    <!-- Favicon -->
+    <link rel="icon" href="img/FS-LOGO.png" type="image/png" />
+    <title>
+      Felipe Software Consultores - Soluciones Digitales Personalizadas
+    </title>
 
     <!-- Preconexión a Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -31,8 +35,9 @@
     <header class="site-header">
       <div class="container header-content">
         <div class="logo">
+          <!-- CORRECCIÓN: img dentro de a -->
           <a href="index.html">
-            <span>Software Consultores</span>
+            <img src="img/FS-LOGO.png" alt="Logo de Software Consultores" />
           </a>
         </div>
         <nav class="main-nav" aria-label="Navegación principal">
@@ -48,8 +53,10 @@
     </header>
 
     <main>
+      <!-- Sección de Hero -->
       <section class="hero-section" aria-labelledby="hero-heading">
         <div class="container">
+          <p>- Software Consultores</p>
           <h1 id="hero-heading">
             Soluciones digitales <br />
             personalizadas que se <br />
@@ -61,11 +68,20 @@
           <img src="img/arrow.svg" alt="" />
         </div>
       </section>
+      <!-- Fin Hero -->
 
+      <!-- CORRECCIÓN: Eliminado carácter '<' suelto -->
+
+      <!-- Sección de Servicios -->
       <section class="services-section" aria-labelledby="services-heading">
         <div class="container">
+          <!-- CORRECCIÓN: Comentario HTML estándar -->
+          <!-- Contenedor principal ahora usará Flexbox para espaciado vertical -->
           <h2 id="services-heading">Nuestros Servicios</h2>
+
+          <!-- Contenedor de Servicios y CTA -->
           <div class="services-grid">
+            <!-- Artículos de Servicios -->
             <article class="service-item">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -212,6 +228,7 @@
               </p>
             </article>
 
+            <!-- CORRECCIÓN: CTA movido aquí DENTRO de services-grid -->
             <div class="cta-item">
               <p class="cta-question">
                 ¿Sabes lo que necesitas para tu próximo proyecto?
@@ -219,14 +236,15 @@
               <a href="contacto.html" class="button cta-button">Escríbenos</a>
             </div>
           </div>
+          <!-- Fin services-grid -->
         </div>
+        <!-- Fin container -->
       </section>
 
+      <!-- Sección de Proyectos Destacados -->
       <section class="featured-projects" aria-labelledby="projects-heading">
         <div class="container">
           <h2 id="projects-heading">Proyectos Destacados</h2>
-
-          <!-- Contenedor para Scroll Horizontal -->
           <div class="projects-scroll-container">
             <!-- Project Card Desarrollo de Software -->
             <article class="project-card">
@@ -263,7 +281,6 @@
                   <span class="tech-stack-tag">PostgreSQL</span>
                   <span class="tech-stack-tag">AWS</span>
                 </div>
-                <!-- Botón Ver Caso añadido -->
                 <a
                   href="proyectos/crm-medida-empresa-x.html"
                   class="button button-project"
@@ -305,7 +322,6 @@
                   <span class="tech-stack-tag">Flask</span>
                   <span class="tech-stack-tag">Docker</span>
                 </div>
-                <!-- Botón Ver Caso añadido -->
                 <a
                   href="proyectos/sistema-recomendacion-ecommerce.html"
                   class="button button-project"
@@ -347,7 +363,6 @@
                   <span class="tech-stack-tag">SQL Server</span>
                   <span class="tech-stack-tag">Python (ETL)</span>
                 </div>
-                <!-- Botón Ver Caso añadido -->
                 <a
                   href="proyectos/dashboard-kpi-financiera.html"
                   class="button button-project"
@@ -388,7 +403,6 @@
                   <span class="tech-stack-tag">UserTesting</span>
                   <span class="tech-stack-tag">Maze</span>
                 </div>
-                <!-- Botón Ver Caso añadido -->
                 <a
                   href="proyectos/rediseno-app-salud.html"
                   class="button button-project"
@@ -431,7 +445,6 @@
                   <span class="tech-stack-tag">Firebase</span>
                   <span class="tech-stack-tag">Google Maps API</span>
                 </div>
-                <!-- Botón Ver Caso añadido -->
                 <a
                   href="proyectos/app-logistica-transporte.html"
                   class="button button-project"
@@ -473,7 +486,6 @@
                   <span class="tech-stack-tag">MySQL</span>
                   <span class="tech-stack-tag">Jenkins</span>
                 </div>
-                <!-- Botón Ver Caso añadido -->
                 <a
                   href="proyectos/soporte-plataforma-saas.html"
                   class="button button-project"
@@ -489,6 +501,7 @@
       <!-- Fin featured-projects -->
     </main>
 
+    <!-- Footer -->
     <footer class="site-footer">
       <div class="container footer-content">
         <p>© 2025 Hecha con cariño Felipe Morales</p>
