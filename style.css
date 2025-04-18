@@ -83,11 +83,26 @@ ul {
   list-style: none;
 }
 
-h1,
-h2,
+h1 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: var(--color-text-base);
+  text-align: center; /* Centrar título principal */
+  font-weight: 700; /* Aumentar peso de la fuente para mayor énfasis */
+  line-height: 1.2; /* Espaciado entre líneas para mejor legibilidad */
+  letter-spacing: 0.02rem; /* Espaciado entre letras para un efecto más limpio */
+}
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--color-text-base);
+  text-align: center; /* Centrar subtítulos */
+}
 h3 {
-  line-height: 1.3;
-  font-weight: 700; /* Aplicar negrita a todos los títulos */
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-text-base);
+  text-align: center; /* Centrar subtítulos de sección */
 }
 
 /* === LAYOUT === */
@@ -472,40 +487,103 @@ h2 {
 
 /* === FOOTER === */
 .site-footer {
-  background-color: var(--color-background-light);
-  padding: 2rem 0;
+  background-color: var(--color-background-light); /* O un color más oscuro */
+  /* background-color: #222; */
+  /* color: var(--color-text-muted); */ /* Texto más claro si el fondo es oscuro */
+  padding: 3rem 0 1.5rem; /* Más padding arriba, menos abajo */
   margin-top: 4rem;
-  text-align: center;
   font-size: 0.9rem;
-  color: var(--color-text-muted);
 }
 
-.site-footer .footer-content {
-  /* Estilos responsivos se encargan del layout */
-  display: flex;
-  flex-direction: column; /* Por defecto móvil */
-  gap: 1rem;
+.footer-container {
+  /* El .container ya centra y limita el ancho */
 }
 
-.social-media {
+.footer-columns {
   display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-top: 1rem;
+  flex-wrap: wrap; /* Permite que las columnas pasen abajo en móvil */
+  gap: 2rem; /* Espacio entre columnas */
+  margin-bottom: 2rem; /* Espacio antes del copyright */
 }
-.social-media a {
-  color: var(--color-text-muted);
+
+.footer-column {
+  flex: 1; /* Hace que cada columna intente ocupar el mismo espacio */
+  min-width: 250px; /* Ancho mínimo antes de que envuelva (ajusta según tu contenido) */
+  /* padding: 0 1rem; */ /* Padding opcional si no usas gap */
+}
+
+.footer-column h4 {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  color: var(--color-text-base); /* O color primario */
+  /* color: var(--color-primary); */
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-column a {
+  color: inherit; /* Hereda color del texto del footer */
   text-decoration: none;
-  padding: 0.25rem; /* Área de click para iconos */
+}
+
+.footer-column a:hover,
+.footer-column a:focus-visible {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+.footer-column a:focus-visible {
+  outline-offset: 1px;
   border-radius: var(--border-radius-small);
 }
-.social-media a:hover,
-.social-media a:focus-visible {
-  color: var(--color-primary);
+
+.footer-social {
+  /* Estilos específicos para redes en footer si son diferentes */
+  justify-content: flex-start; /* Alinear iconos a la izquierda */
+  margin-top: 1rem;
+  gap: 0.8rem;
 }
-.social-media a:focus-visible {
-  outline: 2px solid var(--color-focus-ring);
-  outline-offset: 1px;
+.footer-social svg {
+  width: 20px; /* Tamaño iconos sociales */
+  height: 20px;
+  fill: currentColor; /* Hereda color del enlace */
+}
+
+.footer-copyright {
+  text-align: center;
+  border-top: 1px solid var(--color-border-light); /* Línea separadora */
+  padding-top: 1.5rem;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+/* --- Responsividad para el Footer (Flexbox) --- */
+/* En pantallas pequeñas, Flexbox con flex-wrap ya hará que se apilen si
+   min-width es mayor que el espacio disponible.
+   Si quieres forzar el apilamiento antes, puedes usar una media query: */
+@media (max-width: 767px) {
+  /* Ajusta este breakpoint si es necesario */
+  .footer-columns {
+    flex-direction: column; /* Apila las columnas explícitamente */
+    gap: 1.5rem; /* Reduce el espacio vertical si es necesario */
+  }
+  .footer-column {
+    min-width: 100%; /* Asegura que ocupen todo el ancho */
+    text-align: center; /* Centrar contenido de columna en móvil */
+  }
+  .footer-column ul {
+    /* text-align: center; */ /* O dejar izquierda */
+  }
+  .footer-social {
+    justify-content: center; /* Centrar iconos en móvil */
+  }
 }
 
 /* === MEDIA QUERIES (RESPONSIVE) === */
