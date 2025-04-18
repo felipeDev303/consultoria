@@ -118,7 +118,7 @@ ul {
 
 .decorative-arrow {
   width: 40px; /* Tamaño de la flecha */
-  margin: 2rem auto 0; /* Espaciado y centrado */
+  margin: 20rem auto 0; /* Espaciado y centrado */
 }
 
 /* Sections General */
@@ -153,9 +153,17 @@ h2 {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Sombra sutil */
 }
 
+.service-item:hover,
+.project-card:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra más intensa al pasar el ratón */
+  transform: translateY(-2px); /* Efecto de elevación */
+}
+
 .service-item img {
   margin: 0 auto 1rem;
   display: block; /* Centrado */
+  width: 40px; /* Ancho fijo para iconos */
+  height: auto; /* Mantiene proporción */
 }
 
 .service-item h3,
