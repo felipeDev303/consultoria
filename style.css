@@ -179,8 +179,17 @@ h3 {
 /* === HERO SECTION === */
 .hero-section {
   padding: 4rem 0;
+  padding-top: calc(
+    var(--header-height) + 2rem
+  ); /* Espacio para el header fijo */
+  background-color: var(--color-background-light);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.5rem; /* Espacio entre elementos del hero */
+  min-height: calc(100vh - var(--header-height));
 }
-/* Estilos para el párrafo introductorio del Hero */
+
 .hero-section p {
   color: var(--color-text-muted);
   margin-bottom: 0.5rem;
@@ -191,6 +200,8 @@ h3 {
   font-size: 2rem;
   margin-bottom: 2rem;
   text-align: left;
+  line-height: 1.2; /* Espaciado entre líneas para mejor legibilidad */
+  letter-spacing: 0.02rem; /* Espaciado entre letras para un efecto más limpio */
 }
 
 /* === SECCIONES GENERALES === */
