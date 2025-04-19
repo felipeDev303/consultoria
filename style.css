@@ -1,7 +1,7 @@
 /* === VARIABLES CSS (CUSTOM PROPERTIES) === */
 :root {
   --font-primary: "Poppins", sans-serif;
-  --color-primary: #cc3c34;
+  --color-primary: #d41929;
   --color-primary-dark: #a33029;
   --color-text-base: #111111;
   --color-text-muted: #666;
@@ -132,8 +132,8 @@ h3 {
 }
 
 .site-header .logo .logo-text {
-  font-size: 2rem;
-  font-weight: 400;
+  font-size: 1.5rem;
+  font-weight: 200;
   color: var(--color-primary);
   text-decoration: none; /* Quitar subrayado del texto del logo */
 }
@@ -245,7 +245,7 @@ h2 {
 .service-item svg {
   margin: 0 auto 1rem;
   display: block;
-  width: 40px;
+  width: 30px;
   height: 40px;
   color: var(--color-primary);
   transition: color 0.3s ease;
